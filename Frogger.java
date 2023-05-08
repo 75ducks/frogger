@@ -38,10 +38,17 @@ public class Frogger extends Actor
         }
         
         //get input from user
+        if(isAtEdge() != true){
             getKeys();
+        }
+        else{
+            setLocation(world.getWidth()/2, world.getHeight() - 50);
+        }
+        
         //update position
         
         //check to see if it's dead or off the screen
+        
 
     }   
     
