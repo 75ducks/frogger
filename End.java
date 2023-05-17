@@ -10,6 +10,7 @@ public class End extends World
 {
     Game game;
     Start start;
+    Frogger Frogger = new Frogger();
     /**
      * Constructor for objects of class End.
      * 
@@ -27,5 +28,6 @@ public class End extends World
         if (Greenfoot.isKeyDown("s")){
             Greenfoot.setWorld(start);
         }
+        
     }
 }

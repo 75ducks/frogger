@@ -28,10 +28,11 @@ public class Start extends World
     }
     
     public void act(){
-        showText("kill me", getWidth()/2, getHeight()/2); 
+        showText("CLICK SPACE", getWidth()/2, getHeight()/2); 
         
         if (Greenfoot.isKeyDown("space")){
             Greenfoot.setWorld(game);
         }
+        
     }
 }

@@ -25,4 +25,13 @@ public class Rock extends AbstOther
     public void interact(Frogger player){
         
     }
+    
+    public boolean onTop(Frogger player){
+        if (intersects(player)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

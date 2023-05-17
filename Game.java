@@ -17,6 +17,7 @@ public class Game extends World
     int numCars = 3;
     int numRock = 4;
     int numLogs = 2;
+    int lives = 3;
 
     Car[] cars1 = new Car[numCars];
     Car[] cars2 = new Car[numCars];
@@ -30,9 +31,13 @@ public class Game extends World
     Road road1;
     Road road2;
 
-    River river1;
-    GifImage river;
+    
+    GifImage gif;
     UiElement water;
+    
+    shadowRiver river;
+
+    Die die;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -45,12 +50,14 @@ public class Game extends World
         start = new Start(this);
         end = new End(this, start);
         Greenfoot.setWorld(start);
-        river = new GifImage("river.gif");
-        water = new UiElement(river,1000, 210);
+        
+        gif = new GifImage("river.gif");
+        water = new UiElement(gif,1000, 210);
 
-        setPaintOrder(Car.class, Frogger.class, Rock.class,Log.class);
+        setPaintOrder(Die.class, Car.class, Frogger.class, Rock.class,Log.class);
+        
         player = new Frogger();
-        addObject(player , getWidth()/2, getHeight() - 50);
+        addObject(player ,getWidth()/2 , getHeight() -50);
 
         for(int i = 0; i < numCars; i++){
             cars1[i] = new Car(5);
@@ -86,13 +93,55 @@ public class Game extends World
         road2 = new Road();
         addObject(road2, getWidth()/2, getHeight() - 275);
 
-        // river1 = new River();
-        addObject(water, getWidth()/2, 225);
+        //addObject(water, getWidth()/2, 225);
+        
+        river = new shadowRiver();
+        addObject(river, getWidth()/2, 225);
+        
+        die = new Die();
+        addObject(die, spawnX(), spawnY());
 
     }
-
     public void act(){
-        //List<Rock> allRocks = getObjects(Rock.class);
+        showText("Lives:" +lives, 50, 20);
+        // player.move(5);
+        // if(player.getX()>this.getWidth()){
+        //     player.setLocation(0, player.getY());
+
+        // }
+
+        List<Rock> allRocks = getObjects(Rock.class);
+        for(Rock rock : allRocks){
+            //System.out.println(""+rock.getX()+", "+rock.getY());
+            if (rock.onTop(player) == false){
+                river.interact(player);
+            }
+        }
+        List<Car> allCars = getObjects(Car.class);
+        for(Car car : allCars){
+            car.interact(player);  
+        }
+        List<Log> allLogs = getObjects(Log.class);
+        for(Log log : allLogs){
+            
+        }
+
+        if(lives <= 0){
+            Greenfoot.setWorld(start);
+            lives = 3;
+        }
+
+        
+
     }
 
+    public int spawnY(){
+        Random random = new Random();
+        return random.nextInt(getHeight());
+    }
+
+    public int spawnX(){
+        Random random = new Random(); 
+        return random.nextInt(getWidth());
+    }
 }

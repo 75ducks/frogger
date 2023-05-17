@@ -22,7 +22,14 @@ public class Log extends AbstOther
         super.act();
     }    
     
-    public void interact(Frogger player){
-        
+    public void interact(Frogger player){}
+    
+    public boolean onTop(Frogger player){
+        if (intersects(player)){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
