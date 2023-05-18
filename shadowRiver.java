@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class shadowRiver extends River
 {
-    World world;
+    
     int width;
     int height = 180;
     /**
@@ -27,9 +27,10 @@ public class shadowRiver extends River
         }
     }
 
-    public void interact(Frogger player){
+    public void interact(Frogger player, Game game){
         if (intersects(player)){
-            player.die();
+            player.die(game);
+            
         }
     }
 }

@@ -86,8 +86,9 @@ public class Frogger extends Actor
         setLocation(world.getWidth()/2, world.getHeight() - 50);
     }
 
-    protected void die(){
-        world.lives--;
+    protected void die(Game game){
+        
+        world.livesDown();
         world.addObject(new Corpse(this), getX(), getY());
 
         reset();

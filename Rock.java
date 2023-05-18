@@ -20,18 +20,16 @@ public class Rock extends AbstOther
     {
         // Add your action code here.
         super.act();
+        
+        
     }   
     
-    public void interact(Frogger player){
+    public void interact(Frogger player, Game game){
         
     }
     
     public boolean onTop(Frogger player){
-        if (intersects(player)){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return intersects(player);
+        
     }
 }

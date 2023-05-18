@@ -24,8 +24,9 @@ public class End extends World
     }
 
     public void act(){
-        showText("done ", getWidth()/2, getHeight()/2); 
-        if (Greenfoot.isKeyDown("s")){
+        showText("Game Over", getWidth()/2, getHeight()/2);  
+        showText("click R to go to start ", getWidth()/2, getHeight()/2 + 50); 
+        if (Greenfoot.isKeyDown("r")){
             Greenfoot.setWorld(start);
         }
         

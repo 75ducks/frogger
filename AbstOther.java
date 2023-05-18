@@ -50,7 +50,7 @@ public abstract class AbstOther extends Actor
         }
     }
     
-    public abstract void interact(Frogger player);
+    public abstract void interact(Frogger player, Game game);
     
     
 }

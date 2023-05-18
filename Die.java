@@ -18,10 +18,12 @@ public class Die extends AbstPower
     public void act()
     {
         super.act();
+        
     }
-    public void interact(Frogger player){
+    public void interact(Frogger player, Game game){
         if (intersects(player)){
-            player.die();
+            player.die(game);
+            
         }
     }
 }

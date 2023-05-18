@@ -13,11 +13,15 @@ public class Game extends World
     Frogger player;
     Start start;
     End end;
+    
+    int speed = 5;
 
     int numCars = 3;
     int numRock = 4;
     int numLogs = 2;
-    int lives = 3;
+    private int lives = 3;
+    private int level = 1;
+    
 
     Car[] cars1 = new Car[numCars];
     Car[] cars2 = new Car[numCars];
@@ -30,7 +34,8 @@ public class Game extends World
 
     Road road1;
     Road road2;
-
+    
+    Home home;
     
     GifImage gif;
     UiElement water;
@@ -38,6 +43,8 @@ public class Game extends World
     shadowRiver river;
 
     Die die;
+    
+    
 
     /**
      * Constructor for objects of class MyWorld.
@@ -58,14 +65,29 @@ public class Game extends World
         
         player = new Frogger();
         addObject(player ,getWidth()/2 , getHeight() -50);
+        
+        river = new shadowRiver();
+        addObject(river, getWidth()/2, 225);
+        
+        road1 = new Road();
+        addObject(road1, getWidth()/2, getHeight() - 125);
+        road2 = new Road();
+        addObject(road2, getWidth()/2, getHeight() - 275);
+        
+        home = new Home();
+        addObject(home, getWidth()/2, 50);
+        
+        Random random = new Random();
+        
+        
 
         for(int i = 0; i < numCars; i++){
-            cars1[i] = new Car(5);
+            cars1[i] = new Car(speed, this);
             addObject(cars1[i], 100 + i * 200, getHeight() - 150);
         }
 
         for(int i = 0; i < numCars; i++){
-            cars2[i] = new Car(3);
+            cars2[i] = new Car(speed, this);
             cars2[i].setRotation(180);
             addObject(cars2[i], 100 + i * 250, getHeight() - 250);
         }
@@ -88,15 +110,11 @@ public class Game extends World
             addObject(log2[i], 100 + i * 350, getHeight() - 550);
         }
 
-        road1 = new Road();
-        addObject(road1, getWidth()/2, getHeight() - 125);
-        road2 = new Road();
-        addObject(road2, getWidth()/2, getHeight() - 275);
+        
 
         //addObject(water, getWidth()/2, 225);
         
-        river = new shadowRiver();
-        addObject(river, getWidth()/2, 225);
+        
         
         die = new Die();
         addObject(die, spawnX(), spawnY());
@@ -104,22 +122,20 @@ public class Game extends World
     }
     public void act(){
         showText("Lives:" +lives, 50, 20);
-        // player.move(5);
-        // if(player.getX()>this.getWidth()){
-        //     player.setLocation(0, player.getY());
-
-        // }
+        showText("Level:" +level, 50, 40);
+        
+        home.interact(player, this);
 
         List<Rock> allRocks = getObjects(Rock.class);
         for(Rock rock : allRocks){
             //System.out.println(""+rock.getX()+", "+rock.getY());
-            if (rock.onTop(player) == false){
-                river.interact(player);
-            }
+               // if(rock.onTop(player) == false){
+                // river.interact(player);
+            // }
         }
         List<Car> allCars = getObjects(Car.class);
         for(Car car : allCars){
-            car.interact(player);  
+            car.interact(player, this);  
         }
         List<Log> allLogs = getObjects(Log.class);
         for(Log log : allLogs){
@@ -127,17 +143,32 @@ public class Game extends World
         }
 
         if(lives <= 0){
-            Greenfoot.setWorld(start);
+            Greenfoot.setWorld(end);
             lives = 3;
         }
-
         
 
+    }
+    
+    public void levelUp(){
+        level++;
+    }
+    
+    public int getLevel(){
+        return level;
+    }
+    
+    public void livesDown(){
+        lives--;
+    }
+    
+    public int getLives(){
+        return lives;
     }
 
     public int spawnY(){
         Random random = new Random();
-        return random.nextInt(getHeight());
+        return random.nextInt(getHeight()-225)+225;
     }
 
     public int spawnX(){

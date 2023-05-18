@@ -30,10 +30,4 @@ public class River extends Actor
         }
 
     } 
-    
-    public void interact(Frogger player){
-        if (intersects(player)){
-            player.die();
-        }
-    }
 }

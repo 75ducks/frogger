@@ -30,7 +30,7 @@ public class Corpse extends Actor
           setRotation(rotation);   
         }
         getImage().setTransparency(decay);
-        decay --;
+        decay = decay -3;
         if(decay < 50){
            world.removeObject(this); 
         }

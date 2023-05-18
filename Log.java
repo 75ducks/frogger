@@ -22,7 +22,7 @@ public class Log extends AbstOther
         super.act();
     }    
     
-    public void interact(Frogger player){}
+    public void interact(Frogger player, Game game){}
     
     public boolean onTop(Frogger player){
         if (intersects(player)){

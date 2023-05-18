@@ -30,6 +30,9 @@ public abstract class AbstPower extends Actor
     {
           if(world == null){
             world = (Game)getWorld();
+            img = getImage();
+            
+            img.scale(width, height);
         }
         
     }

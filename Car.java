@@ -8,8 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Car extends AbstOther
 {
-    public Car(int speed){
-        super(speed);
+    Game game;
+    public Car(int speed, Game game){
+        super(speed + game.getLevel()*2);
     }
     
     /**
@@ -22,10 +23,15 @@ public class Car extends AbstOther
         super.act();
     }    
     
-    public void interact(Frogger player){
+    public void interact(Frogger player, Game game){
         if (intersects(player)){
-            player.die();
+            player.die(game);
+            
         }
+    }
+    public boolean onTop(Frogger player){
+        return intersects(player);
+        
     }
 
 }
