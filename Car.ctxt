@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=Car
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Car\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Creates\ a\ car\ that\ gets\ faster\ as\ the\ level\ goes\ up\ and\ goes\ to\ the\ other\ side\ of\ the\ map\ when\ it\ reaches\ the\ border.\ player\ dies\ when\ hit\r\n\ \r\n\ @author\ Nevis\ Macintyre\r\n\ @version\ V1.00\ 5/18/2023\r\n
 comment1.params=speed\ game
 comment1.target=Car(int,\ Game)
+comment1.text=\ \r\n\r\n\ Car\ constructor\r\n\r\n\ @param\ speed\ \ the\ speed.\ \r\n\ @param\ game\ \ the\ game.\ \r\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Car\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=player\ game
 comment3.target=void\ interact(Frogger,\ Game)
-comment4.params=player
-comment4.target=boolean\ onTop(Frogger)
-numComments=5
+comment3.text=\ \r\n\r\n\ Interact\r\n\r\n\ @param\ player\ \ the\ player.\ \r\n\ @param\ game\ \ the\ game.\ \r\n
+numComments=4

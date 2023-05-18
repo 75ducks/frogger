@@ -31,7 +31,7 @@ public class Start extends World
         showText("CLICK SPACE", getWidth()/2, getHeight()/2); 
         
         if (Greenfoot.isKeyDown("space")){
-            Greenfoot.setWorld(game);
+            Greenfoot.setWorld(new Game());
         }
         
     }

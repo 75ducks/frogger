@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class End here.
+ * displays a screen that says game over when you die. Takes you to the start screen if R is pressed.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Nevis Macintyre
+ * @version V1.00 5/18/2023
  */
 public class End extends World
 {
@@ -15,20 +15,29 @@ public class End extends World
      * Constructor for objects of class End.
      * 
      */
-    public End(Game g, Start s)
+
+    public End(Game g, Start s) 
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 600, 1); 
+
+        // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
+        super(1000, 700, 1); 
         this.game = g;
         this.start = s;
     }
 
-    public void act(){
+    /** 
+     *
+     * Act
+     *
+     */
+    public void act(){ 
+
         showText("Game Over", getWidth()/2, getHeight()/2);  
         showText("click R to go to start ", getWidth()/2, getHeight()/2 + 50); 
-        if (Greenfoot.isKeyDown("r")){
+        if (Greenfoot.isKeyDown("r")){//when r is pressed switches to start menu
             Greenfoot.setWorld(start);
         }
-        
+
     }
 }
+

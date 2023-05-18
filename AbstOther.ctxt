@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=AbstOther
-comment0.text=\r\n\ Has\:\r\n\ speed\r\n\ size\ /\ width\r\n\ world,\ img\r\n\ \r\n\ Does\:\r\n\ moves\ to\ side\r\n\ resets\ when\ off\ screen\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Has\:\r\n\ speed\r\n\ size\ /\ width\r\n\ world,\ img\r\n\ \r\n\ Does\:\r\n\ moves\ to\ side\r\n\ resets\ when\ off\ screen\r\n\ \r\n\ @author\ Nevis\ Macintyre\r\n\ @version\ V1.00\ 5/18/2023\r\n
 comment1.params=speed
 comment1.target=AbstOther(int)
+comment1.text=\ \r\n\r\n\ Abst\ other\r\n\r\n\ @param\ speed\ \ the\ speed.\ \r\n\ @return\ public\r\n
 comment2.params=speed\ w\ h
 comment2.target=AbstOther(int,\ int,\ int)
+comment2.text=\ \r\n\r\n\ Abst\ other\r\n\r\n\ @param\ speed\ \ the\ speed.\ \r\n\ @param\ w\ \ the\ w.\ \r\n\ @param\ h\ \ the\ h.\ \r\n\ @return\ public\r\n
 comment3.params=
 comment3.target=void\ act()
 comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Frogger\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
