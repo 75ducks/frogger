@@ -16,7 +16,7 @@ public class Game extends World
 
     private int speed = 5;
 
-    private int numCars;
+    private int numCars = 3;
     private int numRock = 4;
     private int numLogs = 2;
     private int lives = 3;
@@ -130,12 +130,13 @@ public class Game extends World
         showText("Level:" +level, 50, 40);
 
         home.interact(player, this);//check to see if player has beaten the level
+        die.interact(player, this);//check to see if player hit the skull
 
         List<Rock> allRocks = getObjects(Rock.class);//create and array list
         for(Rock rock : allRocks){//go through every object in the array list
-            if(rock.onTop(player) == false){
-              river.interact(player, this);
-            }
+            // if(rock.onTop(player) == false){
+              // river.interact(player, this);
+            // }
         }
         
         List<Car> allCars = getObjects(Car.class);

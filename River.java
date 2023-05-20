@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class River here.
+ * Creates a river gif
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Nevis Macintyre
+ * @version V1.00 5/18/2023
  */
 public class River extends Actor
 {

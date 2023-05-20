@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=shadowRiver
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ shadowRiver\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Shadow\ river\ acts\ as\ a\ hit\ box\ for\ the\ gif\ river\r\n\ \r\n\ @author\ Nevis\ Macintyre\r\n\ @version\ V1.00\ 5/18/2023\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ shadowRiver\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=player\ game
 comment2.target=void\ interact(Frogger,\ Game)
+comment2.text=\ \r\n\r\n\ Interact\r\n\r\n\ @param\ player\ \ the\ player.\ \r\n\ @param\ game\ \ the\ game.\ \r\n
 numComments=3

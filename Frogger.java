@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Frogger here.
+ * Frogger is what the player uses to interact with the other elements of the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Nevis Macintyre
+ * @version V1.00 5/18/2023
  */
 public class Frogger extends Actor
 {
@@ -15,9 +15,16 @@ public class Frogger extends Actor
     final int keyCooldown = 10;
     private int keyTimer;
     private int lives;
-   
 
-    public Frogger(){
+
+    /** 
+     *
+     * Frogger
+     *
+     * @return public
+     */
+    public Frogger(){ 
+
         img = getImage();
         img.scale(leapsize, leapsize);
 
@@ -27,8 +34,10 @@ public class Frogger extends Actor
      * Act - do whatever the Frogger wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+
+    public void act()  
     {
+
         // Add your action code here.
 
         if(world == null){
@@ -52,7 +61,14 @@ public class Frogger extends Actor
         //check to see if it's dead or off the screen
 
     }   
-    protected void getKeys(){
+
+    /** 
+     *
+     * Gets the keys being pressed
+     *
+     */
+    protected void getKeys(){ 
+
         if(keyTimer > keyCooldown){
             if(Greenfoot.isKeyDown("w")){
                 setRotation(-90);
@@ -81,13 +97,25 @@ public class Frogger extends Actor
         keyTimer++;
     }
 
-    protected void reset(){
+    /** 
+     *
+     * Reset Frogger
+     *
+     */
+    protected void reset(){ 
+
         setRotation(-90);
         setLocation(world.getWidth()/2, world.getHeight() - 50);
     }
 
-    protected void die(Game game){
-        
+    /** 
+     *
+     * Die
+     *
+     * @param game  the game. 
+     */
+    protected void die(Game game){ 
+
         world.livesDown();
         world.addObject(new Corpse(this), getX(), getY());
 

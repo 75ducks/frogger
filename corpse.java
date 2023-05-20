@@ -1,38 +1,49 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Corpse here.
+ * corpse spawns where Frogger dies and decays slowly
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Nevis Macintyre
+ * @version V1.00 5/18/2023
  */
 public class Corpse extends Actor
 {
-    
+
     int rotation;
     World world;
     int decay;
-    public Corpse(Frogger f){
+
+    /** 
+     *
+     * Corpse
+     *
+     * @param f  the f. 
+     * @return public
+     */
+    public Corpse(Frogger f){ 
+
         GreenfootImage fimg = f.getImage();
         getImage().scale(fimg.getWidth(), fimg.getHeight());
         rotation = f.getRotation();
         decay = 255;
     }
-    
+
     /**
      * Act - do whatever the Corpse wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act()
+
+    public void act() 
     {
+
         if(world == null){
-          world = getWorld();  
-          setRotation(rotation);   
+            world = getWorld();  
+            setRotation(rotation);   
         }
         getImage().setTransparency(decay);
         decay = decay -3;
         if(decay < 50){
-           world.removeObject(this); 
+            world.removeObject(this); 
         }
     }
 }

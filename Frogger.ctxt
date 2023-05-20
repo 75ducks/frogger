@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=Frogger
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Frogger\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Frogger\ is\ what\ the\ player\ uses\ to\ interact\ with\ the\ other\ elements\ of\ the\ game\r\n\ \r\n\ @author\ Nevis\ Macintyre\r\n\ @version\ V1.00\ 5/18/2023\r\n
 comment1.params=
 comment1.target=Frogger()
+comment1.text=\ \r\n\r\n\ Frogger\r\n\r\n\ @return\ public\r\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Frogger\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=
 comment3.target=void\ getKeys()
+comment3.text=\ \r\n\r\n\ Gets\ the\ keys\ being\ pressed\r\n\r\n
 comment4.params=
 comment4.target=void\ reset()
+comment4.text=\ \r\n\r\n\ Reset\ Frogger\r\n\r\n
 comment5.params=game
 comment5.target=void\ die(Game)
+comment5.text=\ \r\n\r\n\ Die\r\n\r\n\ @param\ game\ \ the\ game.\ \r\n
 numComments=6
